@@ -20,7 +20,7 @@ function getUserMainData(id) {
         return maindata
     }
     else {
-//TODO appel d'API
+        //TODO appel d'API
     }
 }
 
@@ -30,7 +30,7 @@ function getUserAverageData(id) {
         return averagedata
     }
     else {
-//TODO appel d'API
+        //TODO appel d'API
     }
 }
 
@@ -40,7 +40,7 @@ function getUserActivityData(id) {
         return activitydata
     }
     else {
-//TODO appel d'API
+        //TODO appel d'API
     }
 }
 
@@ -50,7 +50,7 @@ function getUserPerformanceData(id) {
         return perfdata
     }
     else {
-//TODO appel d'API
+        //TODO appel d'API
     }
 }
 
@@ -82,4 +82,4 @@ const getData = async (id, categorie) => {
     }
 }
 
-export default {getUserActivityData, getUserAverageData, getUserMainData, getUserPerformanceData}
+export default { getUserActivityData, getUserAverageData, getUserMainData, getUserPerformanceData }
