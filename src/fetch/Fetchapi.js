@@ -14,43 +14,75 @@ let isMock = true;
  * @returns promise
  */
 
-function getUserMainData(id) {
+async function getUserMainData(id, categorie) {
     if (isMock === true) {
         const maindata = USER_MAIN_DATA.find(element => element.id === id);
         return maindata
     }
     else {
         //TODO appel d'API
+        let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
+        console.log(urlCall)
+
+        const data = await fetch(urlCall);
+        console.log(data)
+
+        const dataFetch = await data.json();
+        console.log(dataFetch)
     }
 }
 
-function getUserAverageData(id) {
+async function getUserAverageData(id, categorie) {
     if (isMock === true) {
         const averagedata = USER_AVERAGE_SESSIONS.find(element => element.id === id);
         return averagedata
     }
     else {
         //TODO appel d'API
+        let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
+        console.log(urlCall)
+
+        const data = await fetch(urlCall);
+        console.log(data)
+
+        const dataFetch = await data.json();
+        console.log(dataFetch)
     }
 }
 
-function getUserActivityData(id) {
+async function getUserActivityData(id, categorie) {
     if (isMock === true) {
         const activitydata = USER_ACTIVITY.find(element => element.id === id);
         return activitydata
     }
     else {
         //TODO appel d'API
+        let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
+        console.log(urlCall)
+
+        const data = await fetch(urlCall);
+        console.log(data)
+
+        const dataFetch = await data.json();
+        console.log(dataFetch)
     }
 }
 
-function getUserPerformanceData(id) {
+async function getUserPerformanceData(id, categorie) {
     if (isMock === true) {
         const perfdata = USER_PERFORMANCE.find(element => element.id === id);
         return perfdata
     }
     else {
         //TODO appel d'API
+        let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
+        console.log(urlCall)
+
+        const data = await fetch(urlCall);
+        console.log(data)
+
+        const dataFetch = await data.json();
+        console.log(dataFetch)
     }
 }
 
@@ -60,14 +92,14 @@ const getData = async (id, categorie) => {
     }
     else {
         //TODO ici je récupere les données depuis un appel d'API  
-        let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
-        console.log(urlCall)
+        // let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
+        // console.log(urlCall)
 
-        const data = await fetch(urlCall);
-        console.log(data)
+        // const data = await fetch(urlCall);
+        // console.log(data)
 
-        const dataFetch = await data.json();
-        console.log(dataFetch)
+        // const dataFetch = await data.json();
+        // console.log(dataFetch)
     }
 
     const dataFetch = [];
