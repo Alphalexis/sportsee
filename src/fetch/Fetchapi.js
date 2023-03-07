@@ -14,7 +14,7 @@ let isMock = true;
  * @returns promise
  */
 
-async function getUserMainData(id, categorie) {
+const getUserMainData = async (id, categorie) => {
     if (isMock === true) {
         const maindata = USER_MAIN_DATA.find(element => element.id === id);
         return maindata
@@ -32,7 +32,7 @@ async function getUserMainData(id, categorie) {
     }
 }
 
-async function getUserAverageData(id, categorie) {
+const getUserAverageData = async (id, categorie) => {
     if (isMock === true) {
         const averagedata = USER_AVERAGE_SESSIONS.find(element => element.id === id);
         return averagedata
@@ -50,7 +50,7 @@ async function getUserAverageData(id, categorie) {
     }
 }
 
-async function getUserActivityData(id, categorie) {
+const getUserActivityData = async (id, categorie) => {
     if (isMock === true) {
         const activitydata = USER_ACTIVITY.find(element => element.id === id);
         return activitydata
@@ -68,7 +68,7 @@ async function getUserActivityData(id, categorie) {
     }
 }
 
-async function getUserPerformanceData(id, categorie) {
+const getUserPerformanceData = async (id, categorie) => {
     if (isMock === true) {
         const perfdata = USER_PERFORMANCE.find(element => element.id === id);
         return perfdata
@@ -114,4 +114,6 @@ const getData = async (id, categorie) => {
     }
 }
 
-export default { getUserActivityData, getUserAverageData, getUserMainData, getUserPerformanceData }
+const store = { getUserActivityData, getUserAverageData, getUserMainData, getUserPerformanceData }
+
+export default store
