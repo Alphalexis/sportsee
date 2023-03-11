@@ -113,7 +113,7 @@ const getData = async (id, categorie) => {
         //defaut: [];
     }
 }
-
+ 
 const store = { getUserActivityData, getUserAverageData, getUserMainData, getUserPerformanceData }
 
 export default store
