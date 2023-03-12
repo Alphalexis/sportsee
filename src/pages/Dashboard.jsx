@@ -10,14 +10,15 @@ import store from '../fetch/Fetchapi'
 // import getUserPerformanceData from '../fetch/Fetchapi'
 import { useParams } from "react-router-dom";
 
-async function Dashboard() {
+function Dashboard() {
     let { id } = useParams();
 
     console.log(id, "id");
-  
+    console.log("store", store);
+
 
     
-const activityData = await store.getUserActivityData(id)
+const activityData =  store.getUserActivityData(id, "category")
  console.log(activityData,"activityData");
 
 

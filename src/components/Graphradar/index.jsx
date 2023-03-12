@@ -16,7 +16,7 @@ export default function App() {
         outerRadius={150}
         width={500}
         height={500}
-        data={data}
+      //  data={data}
       >
       <PolarGrid stroke="#FFFFFF" />
       <PolarAngleAxis dataKey="subject" />

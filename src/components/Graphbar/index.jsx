@@ -35,7 +35,7 @@ const renderCustomizedLabel = (props) => {
       <BarChart
         width={500}
         height={300}
-        data={data}
+       // data={data}
         margin={{
           top: 5,
           right: 30,

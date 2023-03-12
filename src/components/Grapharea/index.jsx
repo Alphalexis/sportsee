@@ -14,7 +14,7 @@ export default function App() {
       <AreaChart
         width={500}
         height={400}
-        data={data}
+       // data={data}
         margin={{
           top: 10,
           right: 30,

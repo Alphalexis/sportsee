@@ -1,8 +1,9 @@
 import { mainData, activity, averageSessions, performance } from "../app/dataservice"
-import USER_MAIN_DATA from "../app/data";
-import USER_ACTIVITY from "../app/data";
-import USER_AVERAGE_SESSIONS from "../app/data";
-import USER_PERFORMANCE from "../app/data";
+import dataMock from "../app/data";
+// import USER_MAIN_DATA from "../app/data";
+// import USER_ACTIVITY from "../app/data";
+// import USER_AVERAGE_SESSIONS from "../app/data";
+// import USER_PERFORMANCE from "../app/data";
 
 const url = "http://localhost:3000/user";
 let isMock = true;
@@ -14,9 +15,9 @@ let isMock = true;
  * @returns promise
  */
 
-const getUserMainData = async (id, categorie) => {
+const getUserMainData =  (id, categorie) => {
     if (isMock === true) {
-        const maindata = USER_MAIN_DATA.find(element => element.id === id);
+        const maindata = dataMock.USER_MAIN_DATA.find(element => element.userId == id);
         return maindata
     }
     else {
@@ -24,17 +25,17 @@ const getUserMainData = async (id, categorie) => {
         let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
         console.log(urlCall)
 
-        const data = await fetch(urlCall);
+        const data =  fetch(urlCall);
         console.log(data)
 
-        const dataFetch = await data.json();
+        const dataFetch =  data.json();
         console.log(dataFetch)
     }
 }
 
-const getUserAverageData = async (id, categorie) => {
+const getUserAverageData =  (id, categorie) => {
     if (isMock === true) {
-        const averagedata = USER_AVERAGE_SESSIONS.find(element => element.id === id);
+        const averagedata = dataMock.USER_AVERAGE_SESSIONS.find(element => element.userId == id);
         return averagedata
     }
     else {
@@ -42,17 +43,20 @@ const getUserAverageData = async (id, categorie) => {
         let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
         console.log(urlCall)
 
-        const data = await fetch(urlCall);
+        const data =  fetch(urlCall);
         console.log(data)
 
-        const dataFetch = await data.json();
+        const dataFetch =  data.json();
         console.log(dataFetch)
     }
 }
 
-const getUserActivityData = async (id, categorie) => {
+const getUserActivityData = (id, categorie) => {
+
+    console.log('in getUserActivityData');
     if (isMock === true) {
-        const activitydata = USER_ACTIVITY.find(element => element.id === id);
+        console.log("USER_ACTIVITY", dataMock.USER_ACTIVITY)
+        const activitydata = dataMock.USER_ACTIVITY.find(element => element.userId == id);
         return activitydata
     }
     else {
@@ -60,17 +64,17 @@ const getUserActivityData = async (id, categorie) => {
         let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
         console.log(urlCall)
 
-        const data = await fetch(urlCall);
+        const data =  fetch(urlCall);
         console.log(data)
 
-        const dataFetch = await data.json();
+        const dataFetch =  data.json();
         console.log(dataFetch)
     }
 }
 
-const getUserPerformanceData = async (id, categorie) => {
+const getUserPerformanceData =  (id, categorie) => {
     if (isMock === true) {
-        const perfdata = USER_PERFORMANCE.find(element => element.id === id);
+        const perfdata = dataMock.USER_PERFORMANCE.find(element => element.userId == id);
         return perfdata
     }
     else {
@@ -78,15 +82,15 @@ const getUserPerformanceData = async (id, categorie) => {
         let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
         console.log(urlCall)
 
-        const data = await fetch(urlCall);
+        const data =  fetch(urlCall);
         console.log(data)
 
-        const dataFetch = await data.json();
+        const dataFetch =  data.json();
         console.log(dataFetch)
     }
 }
 
-const getData = async (id, categorie) => {
+const getData =  (id, categorie) => {
     if (isMock === true) {
         //TODO ici je récupere les donnèes depuis le fichier
     }
