@@ -21,6 +21,14 @@ function Dashboard() {
 const activityData =  store.getUserActivityData(id, "category")
  console.log(activityData,"activityData");
 
+const AverageData =  store.getUserAverageData(id, "category")
+ console.log(AverageData,"AverageData");
+
+const mainData =  store.getUserMainData(id, "category")
+ console.log(mainData,"mainData");
+
+const performanceData =  store.getUserPerformanceData(id, "category")
+ console.log(performanceData,"performanceData");
 
     // const activityData = getUserActivityData(id)
     // console.log(activityData,"activityData");

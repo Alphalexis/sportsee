@@ -17,6 +17,7 @@ let isMock = true;
 
 const getUserMainData =  (id, categorie) => {
     if (isMock === true) {
+        console.log("USER_MAIN_DATA", dataMock.USER_MAIN_DATA)
         const maindata = dataMock.USER_MAIN_DATA.find(element => element.userId == id);
         return maindata
     }
@@ -35,6 +36,7 @@ const getUserMainData =  (id, categorie) => {
 
 const getUserAverageData =  (id, categorie) => {
     if (isMock === true) {
+        console.log("USER_AVERAGE_SESSIONS", dataMock.USER_AVERAGE_SESSIONS)
         const averagedata = dataMock.USER_AVERAGE_SESSIONS.find(element => element.userId == id);
         return averagedata
     }
@@ -74,6 +76,7 @@ const getUserActivityData = (id, categorie) => {
 
 const getUserPerformanceData =  (id, categorie) => {
     if (isMock === true) {
+        console.log("USER_PERFORMANCE", dataMock.USER_PERFORMANCE)
         const perfdata = dataMock.USER_PERFORMANCE.find(element => element.userId == id);
         return perfdata
     }
