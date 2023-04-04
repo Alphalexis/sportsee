@@ -9,16 +9,17 @@ const url = "http://localhost:3000/user";
 let isMock = true;
 
 /**
- * retrieve data 
- * @param {number} id 
- * @param {string} categorie 
- * @returns promise
- */
+Retrieve user main data
+@function
+@param {number} id - User id
+@param {string} categorie - Data category
+@returns {Object} User main data object
+*/
 
 const getUserMainData =  (id, categorie) => {
     if (isMock === true) {
         console.log("USER_MAIN_DATA", dataMock.USER_MAIN_DATA)
-        const maindata = dataMock.USER_MAIN_DATA.find(element => element.userId == id);
+        const maindata = dataMock.USER_MAIN_DATA.find(element => element.id == id);
         return maindata
     }
     else {
@@ -33,6 +34,15 @@ const getUserMainData =  (id, categorie) => {
         console.log(dataFetch)
     }
 }
+
+/**
+
+Retrieve user average data
+@function
+@param {number} id - User id
+@param {string} categorie - Data category
+@returns {Object} User average data object
+*/
 
 const getUserAverageData =  (id, categorie) => {
     if (isMock === true) {
@@ -52,6 +62,14 @@ const getUserAverageData =  (id, categorie) => {
         console.log(dataFetch)
     }
 }
+
+/**
+Retrieve user activity data
+@function
+@param {number} id - User id
+@param {string} categorie - Data category
+@returns {Object} User activity data object
+*/
 
 const getUserActivityData = (id, categorie) => {
 
@@ -74,6 +92,14 @@ const getUserActivityData = (id, categorie) => {
     }
 }
 
+/**
+Retrieve user performance data
+@function
+@param {number} id - User id
+@param {string} categorie - Data category
+@returns {Object} User performance data object
+*/
+
 const getUserPerformanceData =  (id, categorie) => {
     if (isMock === true) {
         console.log("USER_PERFORMANCE", dataMock.USER_PERFORMANCE)
@@ -93,21 +119,14 @@ const getUserPerformanceData =  (id, categorie) => {
     }
 }
 
+/**
+Get data based on the category and user id
+@param {number} id - The id of the user
+@param {string} categorie - The category of the data to retrieve (main data, activity, average sessions or performance)
+@returns {Object} - An object with the data for the requested category
+*/
+
 const getData =  (id, categorie) => {
-    if (isMock === true) {
-        //TODO ici je récupere les donnèes depuis le fichier
-    }
-    else {
-        //TODO ici je récupere les données depuis un appel d'API  
-        // let urlCall = categorie ? url + `/${id}/${categorie}/` : url + `/${id}/`;
-        // console.log(urlCall)
-
-        // const data = await fetch(urlCall);
-        // console.log(data)
-
-        // const dataFetch = await data.json();
-        // console.log(dataFetch)
-    }
 
     const dataFetch = [];
 
@@ -115,9 +134,9 @@ const getData =  (id, categorie) => {
         case "activity": return new activity(dataFetch.data);
         case "average-sessions": return new averageSessions(dataFetch.data);
         case "performance": return new performance(dataFetch.data);
-        //case
+
         default: return new mainData(dataFetch.data);
-        //defaut: [];
+
     }
 }
  

@@ -1,0 +1,35 @@
+.divAvg{
+display: flex;
+background-color:#FBFBFB;
+border-radius: 5px;
+width: 250px;
+padding: 20px;
+}
+
+.dataText{
+    margin-left: 10px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dataIcon{
+    height: 100px;
+    width: 100px;
+}
+
+.infoText{
+font-size: 24px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: left;
+margin-bottom: 0px;
+}
+
+.typeText{
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color: #74798C;
+}

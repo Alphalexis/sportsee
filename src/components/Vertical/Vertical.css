@@ -1,0 +1,28 @@
+.vertical {
+    height: 846px;
+    width: 117px;
+    margin-left: 0px;
+    background-color: black;
+  }
+
+.display{
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+    height: 400px;
+    justify-content: space-around;
+    margin-top: 150px;
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+}
+
+.copyright {
+    transform: rotate(-90deg);
+    color: white;
+    height: 200px;
+    width: 200px;
+    margin-left: 40px;
+}
